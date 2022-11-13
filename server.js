@@ -6,6 +6,12 @@ const app = express()
 app.use(require('body-parser').json())
 app.use(require('body-parser').urlencoded({ extended: true }))
 
+//THIS FOR FORTNITE URL TO GRAB
+app.use((req, res, next) => {
+    console.log(req.url);
+    next();
+})
+
 const PORT = process.env.PORT || 4495
 
 fs.readdir('./TimFN_Data/Main', (err, files) => {

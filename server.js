@@ -8,7 +8,7 @@ app.use(require('body-parser').urlencoded({ extended: true }))
 
 //THIS FOR FORTNITE URL TO GRAB
 app.use((req, res, next) => {
-    console.log(req.url);
+    console.log(` [${req.method}] [${req.url}]`);
     next();
 })
 
